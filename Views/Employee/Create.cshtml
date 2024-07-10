@@ -1,0 +1,30 @@
+﻿@model employee.Models.Employee
+
+<h1>Add Employee</h1>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="name" type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">E-mail</label>
+        <input asp-for="email" type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <input asp-for="City" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Gender" class="form-label"></label>
+        <select asp-for="Gender" class="form-control" asp-items="ViewBag.GenderList">
+            <option value="">Select Gender</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save">
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+
+</form>
